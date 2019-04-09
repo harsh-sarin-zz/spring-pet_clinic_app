@@ -1,14 +1,16 @@
 package com.sarin.springtest.springpet_clinic_app.services.map;
 
 import com.sarin.springtest.springpet_clinic_app.model.Vet;
-import com.sarin.springtest.springpet_clinic_app.services.CrudService;
+import com.sarin.springtest.springpet_clinic_app.services.VetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 /**
  * @author Harsh Sarin
  */
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+@Service
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
     @Override
     public Set<Vet> findAll() {
         return super.findAll();
@@ -26,7 +28,7 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements Crud
 
     @Override
     public Vet save(Vet object) {
-        return super.save(object.getId(), object);
+        return super.save(object);
     }
 
     @Override
